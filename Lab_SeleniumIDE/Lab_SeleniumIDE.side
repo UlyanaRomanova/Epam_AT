@@ -733,7 +733,7 @@
       "id": "3e9a8162-894f-40c2-b1ff-d62cf9baabd2",
       "comment": "",
       "command": "click",
-      "target": "xpath=(//a[contains(text(),'Remove')])[78]",
+      "target": "xpath=//*[a='Coffee']/following-sibling::*[a='Remove']/a",
       "targets": [
         ["css=tr:nth-child(79) > td:nth-child(12) > a", "css:finder"],
         ["xpath=(//a[contains(text(),'Remove')])[78]", "xpath:link"],
