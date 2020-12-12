@@ -1,0 +1,824 @@
+{
+  "id": "78f9b141-b87c-4a85-91e7-d3675eec71e1",
+  "version": "2.0",
+  "name": "Lab_SeleniumIDE",
+  "url": "http://localhost:5000",
+  "tests": [{
+    "id": "f9d856ed-5bfd-4289-80bb-2027fb2f5787",
+    "name": "LoginTest",
+    "commands": [{
+      "id": "4dd4664f-2597-41bf-986b-90a993fd7231",
+      "comment": "",
+      "command": "open",
+      "target": "/Account/Login?ReturnUrl=%2F",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67331379-ca68-4ce3-86e7-fc946b157c5f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b9731409-1226-4ce9-8c5f-ed1056963e8f",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "960dc6f4-a965-403f-bd5c-ae1f093f5747",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "52a92e36-f0a9-4f33-9cd7-61d3c545771d",
+      "comment": "",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "197f4b09-ae20-4d1e-b8f5-5b948b696280",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "2f99d8b2-6f0e-4f09-a667-a232d5f3310d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb3b99d9-02c0-4ea4-8c84-458c02e50fe3",
+      "comment": "Check element logout on page",
+      "command": "assertElementPresent",
+      "target": "xpath=//header//*[@href='/Account/Logout']",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "ca77fcde-9cdb-4573-830a-feddf408f1f6",
+    "name": "AddNewProduct",
+    "commands": [{
+      "id": "c09fc8ed-a598-433f-bbe4-5698e05a8026",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1fe461e4-6e45-44bf-b03a-b4f4d67ecca6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9c5642f-3d30-41a7-aaa2-e333be587b2c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[contains(@href, '/Product')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "776934bc-f6ca-4596-a232-74ff7ac1b51d",
+      "comment": "the create button element is present",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'Create new')]",
+      "targets": [
+        ["linkText=Create new", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Create new')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Create')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create new')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "041bcd06-02b4-41f6-8dff-821fb6caf334",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Create new",
+      "targets": [
+        ["linkText=Create new", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Create new')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Create')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create new')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41188140-49e2-4984-9d9d-804fb0192c70",
+      "comment": "",
+      "command": "click",
+      "target": "id=ProductName",
+      "targets": [
+        ["id=ProductName", "id"],
+        ["name=ProductName", "name"],
+        ["css=#ProductName", "css:finder"],
+        ["xpath=//input[@id='ProductName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c0d4d0e-1227-41a9-8edf-6eb94f646308",
+      "comment": "",
+      "command": "type",
+      "target": "id=ProductName",
+      "targets": [
+        ["id=ProductName", "id"],
+        ["name=ProductName", "name"],
+        ["css=#ProductName", "css:finder"],
+        ["xpath=//input[@id='ProductName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Coffee"
+    }, {
+      "id": "2752d5a6-e90a-4357-b7da-bf561be3430f",
+      "comment": "",
+      "command": "click",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aea283e-bc2a-48bf-bff2-6c0cee1adee8",
+      "comment": "",
+      "command": "select",
+      "target": "id=CategoryId",
+      "targets": [],
+      "value": "label=Beverages"
+    }, {
+      "id": "121ae0e5-06cf-47cf-8a33-e7fd06829adb",
+      "comment": "",
+      "command": "click",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "335f8ad1-bfd5-49b6-910b-767032c61790",
+      "comment": "",
+      "command": "click",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea763358-7196-4be2-9228-f326da0dc8a6",
+      "comment": "",
+      "command": "select",
+      "target": "id=SupplierId",
+      "targets": [],
+      "value": "label=Exotic Liquids"
+    }, {
+      "id": "b677afb4-848d-4acd-b59f-f0e80a6fa44b",
+      "comment": "",
+      "command": "click",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "304563ed-7e3c-4b16-9de5-5c4b0fda181b",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c2cc08c-045b-4158-b73b-23558086c381",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "25"
+    }, {
+      "id": "73d46753-450d-45d0-b141-50244d0bfeab",
+      "comment": "",
+      "command": "click",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46e118b0-7421-4a74-8ded-fb6d98b1bdf9",
+      "comment": "",
+      "command": "click",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "733b1d6c-1745-4231-bf7c-68fef132096d",
+      "comment": "",
+      "command": "type",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "5 boxes x 10 bags"
+    }, {
+      "id": "6f7e45ff-6c94-495f-b384-03f6a60c4300",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d68e6921-8300-49e9-af16-b1dce5ad31f7",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "326d6631-16aa-489e-b9cd-0e2cdd23f7fb",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3cc3d02-340a-4b07-8966-5812abb47ccc",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "c92f5c7c-5fdf-46df-9d70-f84ae91bc732",
+      "comment": "",
+      "command": "click",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "791f1ede-005c-4553-8d9b-501c6a38ec96",
+      "comment": "",
+      "command": "type",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "5c610cd2-e0f2-460c-81d2-6f009a3a4313",
+      "comment": "",
+      "command": "click",
+      "target": "id=Discontinued",
+      "targets": [
+        ["id=Discontinued", "id"],
+        ["name=Discontinued", "name"],
+        ["css=#Discontinued", "css:finder"],
+        ["xpath=//input[@id='Discontinued']", "xpath:attributes"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a48571d1-8469-44a8-8c7c-36e162f451d7",
+      "comment": "Checking the text in Category",
+      "command": "verifySelectedValue",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "153d40cb-483e-47b5-aa0b-bde8992d15b5",
+      "comment": "Checking the text in Supplier",
+      "command": "verifySelectedValue",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "bc7ac2e3-937a-4913-aaf2-3a87f9ea31e8",
+      "comment": "Checking the text in UnitPrice",
+      "command": "verifyValue",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "25"
+    }, {
+      "id": "c5bd65bb-a305-4416-8274-d70a879e9926",
+      "comment": "Checking the text in QuantityPerUnit",
+      "command": "verifyValue",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "5 boxes x 10 bags"
+    }, {
+      "id": "ebeb6b48-5b66-4cad-851b-04f0a44ede0c",
+      "comment": "Checking the text in UnitsInStock",
+      "command": "verifyValue",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "0842f0a2-2ffc-4f19-ada6-3188bba19e88",
+      "comment": "Checking the text in UnitOnOrder",
+      "command": "verifyValue",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "d8ec673c-519d-4719-b6b7-4dc55d1a0179",
+      "comment": "Checking the text in ReorderLevel",
+      "command": "verifyValue",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "cc3bed30-5c64-4448-900e-9a75e1d70196",
+      "comment": "checkbox (Discontinued) selected",
+      "command": "verifyChecked",
+      "target": "xpath=//Input[@type='checkbox']",
+      "targets": [
+        ["css=.row:nth-child(9) label", "css:finder"],
+        ["xpath=//div[9]/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,' Discontinued')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c480ede8-aa7d-4788-b2e3-7e3d11566240",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "443c988c-e5fd-4bc8-af88-684042757df6",
+      "comment": "The send button element is not present.The form close",
+      "command": "assertElementNotPresent",
+      "target": "xpath=//input[@type='submit']",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d9e298d8-355b-40b5-ace5-e4757c86f0e2",
+    "name": "OpenProduct",
+    "commands": [{
+      "id": "2b03bd10-53cc-4d11-b830-beee5efa555a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa820f10-a311-4949-b331-41a96e266b57",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f791942f-e596-405d-9344-6d03e78b5a1d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[contains(@href, '/Product')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af940bc1-2e68-4adf-be8d-0ad6b7f3d241",
+      "comment": "the create button element is present",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'Create new')]",
+      "targets": [
+        ["linkText=Create new", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Create new')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Create')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create new')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ff05fe7-d377-488c-a07c-c02eb7890b54",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Coffee",
+      "targets": [
+        ["linkText=Coffee", "linkText"],
+        ["css=tr:nth-child(79) > td:nth-child(2) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Coffee')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Edit?ProductId=88')]", "xpath:href"],
+        ["xpath=//tr[79]/td[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dc28681-6ac8-48c7-a6d7-136a63b59d2f",
+      "comment": "Checking the text in ProductID",
+      "command": "verifyText",
+      "target": "id=ProductId",
+      "targets": [
+        ["id=ProductId", "id"],
+        ["name=ProductId", "name"],
+        ["css=#ProductId", "css:finder"],
+        ["xpath=//input[@id='ProductId']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56099135-ec8e-4681-be46-ef07ec6772ec",
+      "comment": "Checking the text in Category",
+      "command": "verifySelectedValue",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "c8e15d6a-b9de-435f-a5c1-e64303a05b81",
+      "comment": "Checking the text in Supplier",
+      "command": "verifySelectedValue",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "26baebd5-d52b-4a78-97e8-f60e17c67426",
+      "comment": "Checking the text in UnitPrice",
+      "command": "verifyValue",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "25,0000"
+    }, {
+      "id": "229efbc0-3a42-4db1-8d7a-6065bc9a0aee",
+      "comment": "Checking the text in QuantityPerUnit",
+      "command": "verifyValue",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "5 boxes x 10 bags"
+    }, {
+      "id": "3b5ed08f-0a6e-4659-bd12-350eec64fb7a",
+      "comment": "Checking the text in UnitsInStock",
+      "command": "verifyValue",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "8ebc5bdd-ecbb-405e-a508-9b240893e92e",
+      "comment": "Checking the text in UnitOnOrder",
+      "command": "verifyValue",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "eb305f50-aa43-4339-8888-d70ecba8a7ca",
+      "comment": "Checking the text in ReorderLevel",
+      "command": "verifyValue",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "80952ea2-c279-4837-a58c-fb70bfa37d8a",
+      "comment": "checkbox (Discontinued) selected",
+      "command": "verifyChecked",
+      "target": "xpath=//Input[@type='checkbox']",
+      "targets": [
+        ["css=.row:nth-child(9) label", "css:finder"],
+        ["xpath=//div[9]/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,' Discontinued')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f50a2058-ff15-4a49-ba1f-1e7c5dec3b55",
+    "name": "DeleteProduct",
+    "commands": [{
+      "id": "fa46a4bd-ff77-4009-8d15-7adcb28e4e8e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6056055-9e5a-4c5a-9898-5f39edfe4e6a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0ff151e-5bfe-4f6d-ad98-efafd925d949",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[contains(@href, '/Product')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39802958-0a4b-4d9b-a69f-7b8d33643a00",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e9a8162-894f-40c2-b1ff-d62cf9baabd2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[a='Coffee']/following-sibling::*[a='Remove']/a",
+      "targets": [
+        ["css=tr:nth-child(79) > td:nth-child(12) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Remove')])[78]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Remove?ProductId=88')]", "xpath:href"],
+        ["xpath=//tr[79]/td[12]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cf7c77a-b09e-4fae-a8f7-6e1a8f58f954",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Are you sure?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e579027-4eec-4d0b-8ceb-4e3c482374e2",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2ef3715-5628-471a-a897-5a2bef6dfed2",
+      "comment": "the coffee element is not present",
+      "command": "assertElementNotPresent",
+      "target": "linkText=Coffee",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "56c4ceab-ea7b-4e69-af52-2528359f1aa1",
+    "name": "LogOut",
+    "commands": [{
+      "id": "b88dd8ea-0cfd-4369-8afb-347b80976445",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07379c00-b2ce-48c8-9e14-589d5585572d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1057x810",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1d6042a-4fa2-4f33-9deb-1edaf175e7f2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Account/Logout')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8df22e7e-f9b6-4839-a7e2-cf47e8514079",
+      "comment": "The Name field is present",
+      "command": "assertElementPresent",
+      "target": "id=Name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9f617bf-5497-4199-a583-3afe929420af",
+      "comment": "The Password field is present",
+      "command": "assertElementPresent",
+      "target": "id=Password",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7f72bf9f-9a40-42f6-8b98-9ce42a0a0b93",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f9d856ed-5bfd-4289-80bb-2027fb2f5787"]
+  }],
+  "urls": ["http://localhost:5000/"],
+  "plugins": []
+}
