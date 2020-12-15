@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj": {}
+    "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj": {}
   },
   "projects": {
-    "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj": {
+    "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
+        "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
         "projectName": "SeleniumWebDriverBasic",
-        "projectPath": "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
+        "projectPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
         "packagesPath": "C:\\Users\\Ulya\\.nuget\\packages\\",
-        "outputPath": "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\obj\\",
+        "outputPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ulya\\AppData\\Roaming\\NuGet\\NuGet.Config",

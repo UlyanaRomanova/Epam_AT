@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QKoGV72jbxAJ2gUU6o8CPxGtUk3SnisG/9xt/dWHqSSyP1MwWUaqbPz2soQGzR7R8K55qPDSox0Q0Xr3DG+aBg==",
+  "dgSpecHash": "3W+5JbGeeVSusW5/2I3UOkcPrOh+l2JkuXwu/tVBlBFwDsVA4fCGRYjwah52/aTIGYQKgA3+zkjz+lojCKzhUQ==",
   "success": true,
-  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\19_Selenium_WebDriver\\WebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
+  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic\\SeleniumWebDriverBasic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ulya\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Ulya\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
