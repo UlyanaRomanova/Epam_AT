@@ -27,13 +27,13 @@ namespace SeleniumWebDriverAdvanced.PageObjects
             return new HomePage(driver);
         }
 
-        public By GetNameSelector()
+        public IWebElement GetNameSelector()
         {
-            return By.Id("Name");
+            return UserNameInput;
         }
-        public By GetPasswordSelector()
+        public IWebElement GetPasswordSelector()
         {
-            return By.Id("Password");
+            return PasswordInput;
         }
     }
 

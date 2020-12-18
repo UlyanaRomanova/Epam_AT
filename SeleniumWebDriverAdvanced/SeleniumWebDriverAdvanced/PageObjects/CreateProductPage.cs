@@ -16,23 +16,23 @@ namespace SeleniumWebDriverAdvanced.PageObjects
             this.driver = driver;
         }
 
-        public void FillFieldsAndCreate()
+        public void FillFieldsAndCreate(string[] dataInput)
         {
-            new Actions(driver).SendKeys(productNameInput,"Coffee").Build().Perform();
-            new Actions(driver).SendKeys(categoryInput, "Beverages").Build().Perform();
-            new Actions(driver).SendKeys(supplierInput, "Exotic Liquids").Build().Perform();
-            new Actions(driver).SendKeys(unitPriceInput, "25").Build().Perform();
-            new Actions(driver).SendKeys(quantityPerUnitInput, "5 boxes x 10 bags").Build().Perform();
-            new Actions(driver).SendKeys(unitsInStockInput, "32").Build().Perform();
-            new Actions(driver).SendKeys(unitsOnOrderInput, "3").Build().Perform();
-            new Actions(driver).SendKeys(reorderLevelInput, "5").Build().Perform();
+            new Actions(driver).SendKeys(productNameInput, dataInput[0]).Build().Perform();
+            new Actions(driver).SendKeys(categoryInput, dataInput[1]).Build().Perform();
+            new Actions(driver).SendKeys(supplierInput, dataInput[2]).Build().Perform();
+            new Actions(driver).SendKeys(unitPriceInput, dataInput[3]).Build().Perform();
+            new Actions(driver).SendKeys(quantityPerUnitInput, dataInput[4]).Build().Perform();
+            new Actions(driver).SendKeys(unitsInStockInput, dataInput[5]).Build().Perform();
+            new Actions(driver).SendKeys(unitsOnOrderInput, dataInput[6]).Build().Perform();
+            new Actions(driver).SendKeys(reorderLevelInput, dataInput[7]).Build().Perform();
             new Actions(driver).Click(discontinuedCheck).Build().Perform();
             new Actions(driver).Click(submitButton).Build().Perform();
         }
 
-        public By GetSubmitButtonSelector()
+        public IWebElement GetSubmitButtonSelector()
         {
-            return By.XPath("//input[@type='submit']");
+            return (submitButton);
         }
     }
 }

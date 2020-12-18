@@ -4754,11 +4754,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\20_Selenium_WebDriverAdvanced\\WebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
+      "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
       "projectName": "SeleniumWebDriverAdvanced",
-      "projectPath": "D:\\Epam\\Внешний курс AT-2020\\20_Selenium_WebDriverAdvanced\\WebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
+      "projectPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
       "packagesPath": "C:\\Users\\Ulya\\.nuget\\packages\\",
-      "outputPath": "D:\\Epam\\Внешний курс AT-2020\\20_Selenium_WebDriverAdvanced\\WebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\obj\\",
+      "outputPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ulya\\AppData\\Roaming\\NuGet\\NuGet.Config",

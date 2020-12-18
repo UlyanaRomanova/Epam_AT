@@ -26,7 +26,7 @@ namespace SeleniumWebDriverAdvanced.PageObjects
         public IWebElement unitsOnOrderInput => driver.FindElement(By.Id("UnitsOnOrder"));
         public IWebElement reorderLevelInput => driver.FindElement(By.Id("ReorderLevel"));
         public IWebElement discontinuedCheck => driver.FindElement(By.Id("Discontinued"));
-        public IWebElement submitButton => driver.FindElement(By.CssSelector(".btn"));
+        public IWebElement submitButton => driver.FindElement(By.XPath("//input[@type='submit']"));
 
              
      }   

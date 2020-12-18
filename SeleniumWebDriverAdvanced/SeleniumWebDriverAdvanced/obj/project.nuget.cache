@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4OgkhRT1Vzfr+KzMi0zk18SrhbV/xxTUzawxRBpskYLXY49At9BquES8nWkhk7mtkc64AsBxvuL7AHihb8WgdQ==",
+  "dgSpecHash": "3NWc1eNuTeWVrDRJUEKiku4UQF35xtgP2/n6pCzeGW3sqZhiNFjzjQj+5983/SIEdQgaGbVNvTpBKizb61mN2Q==",
   "success": true,
-  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\20_Selenium_WebDriverAdvanced\\WebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
+  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced\\SeleniumWebDriverAdvanced.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ulya\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
     "C:\\Users\\Ulya\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\3.12.0\\dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512",

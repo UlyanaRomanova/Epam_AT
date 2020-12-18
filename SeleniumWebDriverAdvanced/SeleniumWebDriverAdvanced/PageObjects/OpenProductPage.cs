@@ -34,10 +34,10 @@ namespace SeleniumWebDriverAdvanced.PageObjects
             return Attributes;
         }
 
-        public void CloseForm() 
+        public void CloseForm(string dataUnitPrice) 
         {
             new Actions(driver).DoubleClick(unitPriceInput).SendKeys(Keys.Clear).Build().Perform();
-            new Actions(driver).SendKeys(unitPriceInput, "25").Build().Perform();
+            new Actions(driver).SendKeys(unitPriceInput, dataUnitPrice).Build().Perform();
             new Actions(driver).Click(submitButton).Build().Perform();
         }
 

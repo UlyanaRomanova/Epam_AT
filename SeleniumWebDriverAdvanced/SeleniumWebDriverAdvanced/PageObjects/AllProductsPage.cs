@@ -16,8 +16,8 @@ namespace SeleniumWebDriverAdvanced.PageObjects
         }
 
         private IWebElement buttonCreateNew => driver.FindElement(By.LinkText("Create new"));
-        private IWebElement linkTestProduct => driver.FindElement(By.LinkText("Coffee"));
-        private IWebElement linkRemoveTestProduct => driver.FindElement(By.XPath("(//*[a='Coffee']/following-sibling::*[a='Remove']/a)[1]"));
+        private IWebElement linkTestProduct(string productName) => driver.FindElement(By.LinkText($"{productName}"));
+        private IWebElement linkRemoveTestProduct(string productName) => driver.FindElement(By.XPath($"(//*[a='{productName}']/following-sibling::*[a='Remove']/a)[1]"));
 
         public CreateProductPage CreateProduct()
         {
@@ -25,33 +25,33 @@ namespace SeleniumWebDriverAdvanced.PageObjects
             return new CreateProductPage(driver);
         }
 
-        public OpenProductPage OpenProduct()
+        public OpenProductPage OpenProduct(string productName)
         {
-            new Actions(driver).MoveToElement(linkTestProduct).Click(linkTestProduct).Build().Perform();
+            new Actions(driver).MoveToElement(linkTestProduct(productName)).Click().Build().Perform();
             return new OpenProductPage(driver);
         }
 
-        public void RemoveTestProduct()
+        public void RemoveTestProduct(string productName)
         {
-            new Actions(driver).MoveToElement(linkRemoveTestProduct).Click(linkRemoveTestProduct).Build().Perform();
+            new Actions(driver).MoveToElement(linkRemoveTestProduct(productName)).Click().Build().Perform();
             driver.SwitchTo().Alert().Accept();
             driver.Navigate().Refresh();
             driver.Navigate().Refresh();
         }
 
-        public By GetRemoveSelector()
+        public IWebElement GetRemoveSelector(string productName)
         {
-            return (By.XPath("(//*[a='Coffee']/following-sibling::*[a='Remove']/a)[1]"));
+            return linkRemoveTestProduct(productName);
         }
 
-        public string GetIdElement()
+        public string GetIdElement(string productName)
         {
-            return driver.FindElement(By.XPath("(//*[a='Coffee']/preceding-sibling::td)[1]")).Text;
+            return driver.FindElement(By.XPath($"(//*[a='{productName}']/preceding-sibling::td)[1]")).Text;
         }
 
-        public By GetElementSelector()
+        public IWebElement GetElementSelector(string productName)
         {
-            return (By.LinkText("Coffee"));
+            return driver.FindElement(By.LinkText($"{productName}"));
         }
     }
 }

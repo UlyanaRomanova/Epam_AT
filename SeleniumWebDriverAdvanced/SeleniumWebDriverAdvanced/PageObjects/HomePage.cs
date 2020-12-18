@@ -29,9 +29,9 @@ namespace SeleniumWebDriverAdvanced.PageObjects
             new Actions(driver).MoveToElement(linkLogOut).Click(linkLogOut).Build().Perform();
         }
 
-        public By GetLogOutSelector()
+        public IWebElement GetLogOutSelector()
         {
-            return By.LinkText("Logout");
+            return linkLogOut;
         }
 
 

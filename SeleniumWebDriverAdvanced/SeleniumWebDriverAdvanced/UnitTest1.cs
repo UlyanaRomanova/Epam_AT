@@ -18,13 +18,19 @@ namespace SeleniumWebDriverAdvanced
         private CreateProductPage createProductPage;
         private OpenProductPage openProductPage;
 
-        private bool IsElementPresent(By locator)
+        private string[] testDataInput;
+
+        private bool IsElementPresent(IWebElement webElement)
         {
             try
             {
-                return driver.FindElement(locator).Displayed;
+                return webElement.Displayed;
             }
             catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
             {
                 return false;
             }
@@ -36,7 +42,7 @@ namespace SeleniumWebDriverAdvanced
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://localhost:5000");
             driver.Manage().Window.Maximize();
-       
+            testDataInput = new string[] { "Coffee", "Beverages", "Exotic Liquids", "25", "5 boxes x 10 bags", "32", "3", "5" };
         }
 
         [Test, Order(1)]
@@ -56,10 +62,11 @@ namespace SeleniumWebDriverAdvanced
             createProductPage = new CreateProductPage(driver);
             allProductsPage = homePage.ClickAllProducts();
             createProductPage = allProductsPage.CreateProduct();
-            createProductPage.FillFieldsAndCreate();
+            IWebElement submitButtonSelector = createProductPage.GetSubmitButtonSelector();
+            createProductPage.FillFieldsAndCreate(testDataInput);
             
             // Check form close. Button "submit" is not present.
-            bool ButtonSend = IsElementPresent(createProductPage.GetSubmitButtonSelector());
+            bool ButtonSend = IsElementPresent(submitButtonSelector);
             Assert.IsFalse(ButtonSend);
         }
 
@@ -68,8 +75,7 @@ namespace SeleniumWebDriverAdvanced
         {
             allProductsPage = new AllProductsPage(driver);
             openProductPage = new OpenProductPage(driver);
-            //allProductsPage = homePage.ClickAllProducts();
-            openProductPage = allProductsPage.OpenProduct();
+            openProductPage = allProductsPage.OpenProduct(testDataInput[0]);
             openProductPage.GetAttributeFields();
 
             Assert.IsNotEmpty(openProductPage.GetAttributeFields()[0]);
@@ -83,7 +89,7 @@ namespace SeleniumWebDriverAdvanced
             Assert.AreEqual("5", openProductPage.GetAttributeFields()[8]);
             Assert.IsTrue(Convert.ToBoolean(openProductPage.GetAttributeFields()[9]));
 
-            openProductPage.CloseForm();
+            openProductPage.CloseForm(testDataInput[3]);
         }
 
         [Test, Order(4)]
@@ -91,28 +97,29 @@ namespace SeleniumWebDriverAdvanced
         {
             allProductsPage = new AllProductsPage(driver);
 
-            // Check element "Remove" for element "Coffee"
-            bool RemoveCoffeElement = IsElementPresent(allProductsPage.GetRemoveSelector());
-            Assert.IsTrue(RemoveCoffeElement);
+            // Check element "Remove" for element Product
+            bool RemoveProductElement = IsElementPresent(allProductsPage.GetRemoveSelector(testDataInput[0]));
+            Assert.IsTrue(RemoveProductElement);
 
-            // Для сравнения по ProductID при наличии нескольких элементов "Coffee".
-            string StrProductIDBefore = allProductsPage.GetIdElement();
+            // For comparison by ProductID if there are multiple elements Product.
+            string StrProductIDBefore = allProductsPage.GetIdElement(testDataInput[0]);
             int ProductIdBefore = int.Parse(StrProductIDBefore);
 
-            // Remove.
-            allProductsPage.RemoveTestProduct();
+            IWebElement linkProductSelector = allProductsPage.GetElementSelector(testDataInput[0]);
+            
+            allProductsPage.RemoveTestProduct(testDataInput[0]);
 
-            // Check "Coffee" is present.
-            bool CoffeElementAfter = IsElementPresent(allProductsPage.GetElementSelector());
-            if (CoffeElementAfter)
+            // Check Product is present.
+            bool ProductElementAfter = IsElementPresent(linkProductSelector);
+            if (ProductElementAfter)
             {
-                string StrProductIDAfter = allProductsPage.GetIdElement();
+                string StrProductIDAfter = allProductsPage.GetIdElement(testDataInput[0]);
                 int ProductIdAfter = int.Parse(StrProductIDAfter);
                 Assert.AreNotEqual(ProductIdAfter, ProductIdBefore);
             }
             else 
             {
-                Assert.IsFalse(CoffeElementAfter);
+                Assert.IsFalse(ProductElementAfter);
             }
 
         }
@@ -124,7 +131,6 @@ namespace SeleniumWebDriverAdvanced
             bool ElementLogout = IsElementPresent(homePage.GetLogOutSelector());
             Assert.IsTrue(ElementLogout);
 
-            // Logout.
             homePage.LogOut();
   
             // Check authorization page. 
