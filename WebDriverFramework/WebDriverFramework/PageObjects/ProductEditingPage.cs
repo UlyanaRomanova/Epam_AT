@@ -19,7 +19,9 @@ namespace WebDriverFramework.PageObjects
         public IWebElement idProduct => driver.FindElement(By.Id("ProductId"));
         public IWebElement productNameInput => driver.FindElement(By.Id("ProductName"));
         public IWebElement categoryInput => driver.FindElement(By.Id("CategoryId"));
+        public IWebElement categoryInputGetValue => driver.FindElement(By.XPath("//*[@id='CategoryId']//option[@value='1']"));
         public IWebElement supplierInput => driver.FindElement(By.Id("SupplierId"));
+        public IWebElement supplierInputGetValue => driver.FindElement(By.XPath("//*[@id='SupplierId']//option[@value='1']"));
         public IWebElement unitPriceInput => driver.FindElement(By.Id("UnitPrice"));
         public IWebElement quantityPerUnitInput => driver.FindElement(By.Id("QuantityPerUnit"));
         public IWebElement unitsInStockInput => driver.FindElement(By.Id("UnitsInStock"));

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj": {}
+    "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj": {}
   },
   "projects": {
-    "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj": {
+    "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
+        "projectUniqueName": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
         "projectName": "WebDriverFramework",
-        "projectPath": "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
+        "projectPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
         "packagesPath": "C:\\Users\\Ulya\\.nuget\\packages\\",
-        "outputPath": "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\obj\\",
+        "outputPath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ulya\\AppData\\Roaming\\NuGet\\NuGet.Config",

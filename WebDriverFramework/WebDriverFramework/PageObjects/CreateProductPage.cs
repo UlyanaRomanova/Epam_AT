@@ -32,13 +32,9 @@ namespace WebDriverFramework.PageObjects
             { 
                 new Actions(driver).Click(discontinuedCheck).Build().Perform(); 
             }
-            
+
             new Actions(driver).Click(submitButton).Build().Perform();
         }
 
-        public IWebElement GetSubmitButtonSelector()
-        {
-            return (submitButton);
-        }
     }
 }

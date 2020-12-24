@@ -9,45 +9,48 @@ namespace WebDriverFramework.Service.ui
 {
     class ProductCoffeeService
     {
-        public static AllProductsPage AutorizationAndAllProducts(User user, IWebDriver driver)
+        public static HomePage Autorization(User user, IWebDriver driver)
         {
             LoginPage loginPage = new LoginPage(driver);
             HomePage homePage = new HomePage(driver);
             homePage = loginPage.Autorization(user);
-            AllProductsPage allProductsPage = new AllProductsPage(driver);
+            return homePage;
+        }
+
+        public static AllProductsPage ClickAllProducts(IWebDriver driver)
+        {
+            HomePage homePage = new HomePage(driver);
             return homePage.ClickAllProducts();
         }
 
-        public static IWebElement AddProduct(Product product, IWebDriver driver)
+        public static AllProductsPage AddProduct(Product product, IWebDriver driver)
         {
             AllProductsPage allProductsPage = new AllProductsPage(driver);
-            CreateProductPage createProductPage = new CreateProductPage(driver);
-            createProductPage = allProductsPage.CreateProduct();
-            IWebElement submitButtonSelector = createProductPage.GetSubmitButtonSelector();
+            CreateProductPage createProductPage = allProductsPage.CreateProduct();
             createProductPage.FillFieldsAndCreate(product);
-            return submitButtonSelector;
+            return allProductsPage;
         }
 
-        public static List<string> OpenProduct(Product product, IWebDriver driver)
+        public static OpenProductPage OpenProduct(Product product, IWebDriver driver)
         {
             AllProductsPage allProductsPage = new AllProductsPage(driver);
-            OpenProductPage openProductPage = new OpenProductPage(driver);
-            openProductPage = allProductsPage.OpenProduct(product);
-            List<string> Attributes =  openProductPage.GetAttributeFields();
-            openProductPage.CloseForm(product);
-            return Attributes;
+            OpenProductPage openProductPage = allProductsPage.OpenProduct(product);
+            return openProductPage;
         }
 
         public static LoginPage LogOut(IWebDriver driver)
         {
             LoginPage loginPage = new LoginPage(driver);
-           
             HomePage homePage = new HomePage(driver);
-            
             homePage.LogOut();
-
             return loginPage;
+        }
 
+        public static AllProductsPage DeleteProduct(Product product, IWebDriver driver)
+        {
+            AllProductsPage allProductsPage = new AllProductsPage(driver);
+            allProductsPage.RemoveTestProduct(product);
+            return allProductsPage;
         }
 
     }

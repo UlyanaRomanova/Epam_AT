@@ -14,13 +14,13 @@ namespace WebDriverFramework.PageObjects
         {
             this.driver = driver;
         }
-        public List<string> GetAttributeFields()
+        public Product GetAttributeFields()
         {
             string textId = idProduct.GetAttribute("value");
             string textproductName = productNameInput.GetAttribute("value");
-            string textCategory = categoryInput.GetAttribute("value");
-            string textSupplier = supplierInput.GetAttribute("value");
-            string textUnitPrice = unitPriceInput.GetAttribute("value");
+            string textCategory = categoryInputGetValue.Text;
+            string textSupplier = supplierInputGetValue.Text;
+            string textUnitPrice = Convert.ToString(Convert.ToInt64(Convert.ToDecimal(unitPriceInput.GetAttribute("value"))));
             string textQuantity = quantityPerUnitInput.GetAttribute("value");
             string textUnitsInStock = unitsInStockInput.GetAttribute("value");
             string textUnitsOrder = unitsOnOrderInput.GetAttribute("value");
@@ -29,10 +29,10 @@ namespace WebDriverFramework.PageObjects
             bool enableDiscontinued = discontinuedCheck.Enabled;
             string strEnableDiscontinued = Convert.ToString(enableDiscontinued);
 
-            List<string> Attributes = new List<string>() {textId, textproductName, textCategory, textSupplier,
-                textUnitPrice, textQuantity, textUnitsInStock, textUnitsOrder, textReorderLevel, strEnableDiscontinued};
+            Product openTestProduct = new Product(textproductName, textCategory, textSupplier, textUnitPrice, textQuantity,
+                textUnitsInStock, textUnitsOrder, textReorderLevel, enableDiscontinued); ;
 
-            return Attributes;
+            return openTestProduct;
         }
 
         public void CloseForm(Product product) 

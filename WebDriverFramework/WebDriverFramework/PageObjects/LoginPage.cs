@@ -20,6 +20,22 @@ namespace WebDriverFramework.PageObjects
         private IWebElement PasswordInput => driver.FindElement(By.Id("Password"));
         private IWebElement ButtonSend => driver.FindElement(By.CssSelector(".btn"));
 
+        private bool IsElementPresent(IWebElement webElement)
+        {
+            try
+            {
+                return webElement.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+        }
+
         public HomePage Autorization(User user)
         {
             new Actions(driver).SendKeys(UserNameInput, user.UserName).Build().Perform();
@@ -28,14 +44,15 @@ namespace WebDriverFramework.PageObjects
             return new HomePage(driver);
         }
 
-        public IWebElement GetNameSelector()
+        public bool GetElementLogInName()
         {
-            return UserNameInput;
+            return IsElementPresent(UserNameInput);
         }
-        public IWebElement GetPasswordSelector()
+        public bool GetElementLogInPassword()
         {
-            return PasswordInput;
+            return IsElementPresent(PasswordInput);
         }
+
     }
 
 }

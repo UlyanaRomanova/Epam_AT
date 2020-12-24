@@ -26,16 +26,8 @@ namespace WebDriverFramework.PageObjects
 
         public void LogOut()
         {
-            
             new Actions(driver).MoveToElement(linkLogOut).Click(linkLogOut).Build().Perform();
-            
         }
-
-        public IWebElement GetLogOutSelector()
-        {
-            return linkLogOut;
-        }
-
 
     }
 }

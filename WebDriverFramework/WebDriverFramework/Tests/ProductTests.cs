@@ -16,87 +16,59 @@ namespace WebDriverFramework.Tests
         User user = new User("user","user");
         Product productCoffee = new Product("Coffee", "Beverages", "Exotic Liquids", "25", "5 boxes x 10 bags", "32", "3", "5", true);
 
-        private bool IsElementPresent(IWebElement webElement)
-        {
-            try
-            {
-                return webElement.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (StaleElementReferenceException)
-            {
-                return false;
-            }
-        }
-
-
         [Test, Order(1)]
         public void LoginTest()
         {
-            AllProductsPage allProductsPage = ProductCoffeeService.AutorizationAndAllProducts(user, driver);
-            bool ElementLogout = IsElementPresent(allProductsPage.GetLogOutSelector());
-            Assert.IsTrue(ElementLogout);
+            HomePage homePage = ProductCoffeeService.Autorization(user, driver);
+            AllProductsPage allProductsPage = ProductCoffeeService.ClickAllProducts(driver);
+            Assert.IsTrue(allProductsPage.GetLogOutSelector());
         }
 
         [Test, Order(2)]
         public void AddNewProduct()
         {
-            IWebElement submitButtonSelector = ProductCoffeeService.AddProduct(productCoffee, driver);
-            bool ButtonSend = IsElementPresent(submitButtonSelector);
-            Assert.IsFalse(ButtonSend);
+            AllProductsPage allProductsPage = ProductCoffeeService.AddProduct(productCoffee, driver);
+            Assert.IsTrue(allProductsPage.GetCreateNewSelector());
         }
 
         [Test, Order(3)]
         public void OpenProduct()
         {
-            List<string> Attributes = ProductCoffeeService.OpenProduct(productCoffee, driver);
+            OpenProductPage openProductPage = ProductCoffeeService.OpenProduct(productCoffee, driver);
+            Product openTestProduct = openProductPage.GetAttributeFields();
 
             Assert.Multiple(() =>
             {
-                Assert.IsNotEmpty(Attributes[0]);
-                Assert.AreEqual("Coffee", Attributes[1]);
-                Assert.AreEqual("1", Attributes[2]);
-                Assert.AreEqual("1", Attributes[3]);
-                Assert.AreEqual("25,0000", Attributes[4]);
-                Assert.AreEqual("5 boxes x 10 bags", Attributes[5]);
-                Assert.AreEqual("32", Attributes[6]);
-                Assert.AreEqual("3", Attributes[7]);
-                Assert.AreEqual("5", Attributes[8]);
-                Assert.IsTrue(Convert.ToBoolean(Attributes[9]));
+                Assert.IsNotEmpty(openTestProduct.productId);
+                Assert.AreEqual(productCoffee.productName, openTestProduct.productName);
+                Assert.AreEqual(productCoffee.Category, openTestProduct.Category);
+                Assert.AreEqual(productCoffee.Supplier, openTestProduct.Supplier);
+                Assert.AreEqual(productCoffee.UnitPrice, openTestProduct.UnitPrice);
+                Assert.AreEqual(productCoffee.Quantity, openTestProduct.Quantity);
+                Assert.AreEqual(productCoffee.UnitsInStock, openTestProduct.UnitsInStock);
+                Assert.AreEqual(productCoffee.UnitsOrder, openTestProduct.UnitsOrder);
+                Assert.AreEqual(productCoffee.ReorderLevel, openTestProduct.ReorderLevel);
+                Assert.IsTrue(openTestProduct.discontinued);
             });
         }
 
         [Test, Order(4)]
         public void DeleteProductTest()
         {
-            AllProductsPage allProductsPage = new AllProductsPage(driver);
+            AllProductsPage allProductsPage = ProductCoffeeService.ClickAllProducts(driver);
+            Assert.IsTrue(allProductsPage.GetRemoveSelector(productCoffee));
 
-            // Check element "Remove" for element Product
-            bool RemoveProductElement = IsElementPresent(allProductsPage.GetRemoveSelector(productCoffee));
-            Assert.IsTrue(RemoveProductElement);
+            int StrProductIDBefore = allProductsPage.GetIdElementBefore(productCoffee);
+            allProductsPage = ProductCoffeeService.DeleteProduct(productCoffee, driver);
+            int StrProductIDAfter = allProductsPage.GetIdElementAfter(productCoffee);
 
-            // For comparison by ProductID if there are multiple elements Product.
-            string StrProductIDBefore = allProductsPage.GetIdElement(productCoffee);
-            int ProductIdBefore = int.Parse(StrProductIDBefore);
-
-            IWebElement linkProductSelector = allProductsPage.GetElementSelector(productCoffee);
-
-            allProductsPage.RemoveTestProduct(productCoffee);
-
-            // Check Product is present.
-            bool ProductElementAfter = IsElementPresent(linkProductSelector);
-            if (ProductElementAfter)
+            if (allProductsPage.GetIdElementAfter(productCoffee) != 0)
             {
-                string StrProductIDAfter = allProductsPage.GetIdElement(productCoffee);
-                int ProductIdAfter = int.Parse(StrProductIDAfter);
-                Assert.AreNotEqual(ProductIdAfter, ProductIdBefore);
+                Assert.AreNotEqual(StrProductIDAfter, StrProductIDBefore);
             }
             else
             {
-                Assert.IsFalse(ProductElementAfter);
+                Assert.IsFalse(allProductsPage.GetRemoveSelector(productCoffee));
             }
 
         }
@@ -105,13 +77,13 @@ namespace WebDriverFramework.Tests
         public void LogOutTest()
         {
             LoginPage loginPage = ProductCoffeeService.LogOut(driver);
+            Assert.Multiple(() =>
+            {
+                Assert.IsTrue(loginPage.GetElementLogInName());
+                Assert.IsTrue(loginPage.GetElementLogInPassword());
+            });
 
-            bool ElementLogInName = IsElementPresent(loginPage.GetNameSelector());
-            bool ElementLogInPassword = IsElementPresent(loginPage.GetNameSelector());
-            Assert.IsTrue(ElementLogInName);
-            Assert.IsTrue(ElementLogInPassword);
         }
-
 
     }
 }

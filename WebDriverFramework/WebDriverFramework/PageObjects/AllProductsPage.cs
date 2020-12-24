@@ -21,6 +21,22 @@ namespace WebDriverFramework.PageObjects
         private IWebElement linkRemoveTestProduct(string productName) => driver.FindElement(By.XPath($"(//*[a='{productName}']/following-sibling::*[a='Remove']/a)[1]"));
         private IWebElement linkLogOut => driver.FindElement(By.LinkText("Logout"));
 
+        private bool IsElementPresent(IWebElement webElement)
+        {
+            try
+            {
+                return webElement.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+        }
+
         public CreateProductPage CreateProduct()
         {
             new Actions(driver).MoveToElement(buttonCreateNew).Click(buttonCreateNew).Build().Perform();
@@ -33,32 +49,56 @@ namespace WebDriverFramework.PageObjects
             return new OpenProductPage(driver);
         }
 
-        public void RemoveTestProduct(Product product)
+        public AllProductsPage RemoveTestProduct(Product product)
         {
             new Actions(driver).MoveToElement(linkRemoveTestProduct(product.productName)).Click().Build().Perform();
             driver.SwitchTo().Alert().Accept();
             driver.Navigate().Refresh();
             driver.Navigate().Refresh();
+            return new AllProductsPage(driver);
         }
 
-        public IWebElement GetRemoveSelector(Product product)
+        public bool GetRemoveSelector(Product product)
         {
-            return linkRemoveTestProduct(product.productName);
+            try
+            {
+                return IsElementPresent(linkRemoveTestProduct(product.productName));
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
-        public string GetIdElement(Product product)
+        public int GetIdElementBefore(Product product)
         {
-            return driver.FindElement(By.XPath($"(//*[a='{product.productName}']/preceding-sibling::td)[1]")).Text;
+            int ProductIdBefore = int.Parse(driver.FindElement(By.XPath($"(//*[a='{product.productName}']/preceding-sibling::td)[1]")).Text);
+            return ProductIdBefore;
         }
 
-        public IWebElement GetElementSelector(Product product)
+        public int GetIdElementAfter(Product product)
         {
-            return driver.FindElement(By.LinkText($"{product.productName}"));
+            try
+            {
+                IsElementPresent(driver.FindElement(By.LinkText($"{product.productName}")));
+                int ProductIdAfter = int.Parse(driver.FindElement(By.XPath($"(//*[a='{product.productName}']/preceding-sibling::td)[1]")).Text);
+                return ProductIdAfter;
+            }
+            
+            catch (NoSuchElementException)
+            {
+                return 0;
+            }
         }
 
-        public IWebElement GetLogOutSelector()
+        public bool GetLogOutSelector()
         {
-            return linkLogOut;
+            return IsElementPresent(linkLogOut);
+        }
+
+        public bool GetCreateNewSelector()
+        {
+            return IsElementPresent(buttonCreateNew);
         }
 
         public void LogOut()

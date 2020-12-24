@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NTAxXu6jOulwBXyQO1K8pvBkqIvqsqKEZMHENwygUT4nDA5hD3IU3RQqDfN34LdC5xUHBtubf5pjT1YjEhLuwQ==",
+  "dgSpecHash": "hdG/MrUuMpilU7Rpy0Em99VaADiqKC8OmXqobg2bnJmNz3f/h2RsFrF0bUF712xY6TcrJZUcaq8smpn6R56OGw==",
   "success": true,
-  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\21_Framework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
+  "projectFilePath": "D:\\Epam\\Внешний курс AT-2020\\Lab_AT\\Epam_AT\\WebDriverFramework\\WebDriverFramework\\WebDriverFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ulya\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
     "C:\\Users\\Ulya\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\3.12.0\\dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512",

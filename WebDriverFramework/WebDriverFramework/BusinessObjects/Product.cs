@@ -30,6 +30,7 @@ namespace WebDriverFramework.BusinessObjects
         public string UnitsOrder { get; set; }
         public string ReorderLevel { get; set; }
         public bool discontinued { get; set; }
+        public string productId { get; }
 
     }
 }
