@@ -197,3 +197,4 @@ D:\Epam\Внешний курс AT-2020\Lab_AT\Epam_AT\WebDriverFramework\WebDri
 D:\Epam\Внешний курс AT-2020\Lab_AT\Epam_AT\WebDriverFramework\WebDriverFramework\obj\Debug\netcoreapp3.1\WebDriverFramework.dll
 D:\Epam\Внешний курс AT-2020\Lab_AT\Epam_AT\WebDriverFramework\WebDriverFramework\obj\Debug\netcoreapp3.1\WebDriverFramework.pdb
 D:\Epam\Внешний курс AT-2020\Lab_AT\Epam_AT\WebDriverFramework\WebDriverFramework\obj\Debug\netcoreapp3.1\WebDriverFramework.genruntimeconfig.cache
+D:\Epam\Внешний курс AT-2020\Lab_AT\Epam_AT\WebDriverFramework\WebDriverFramework\obj\Debug\netcoreapp3.1\WebDriverFramework.csprojAssemblyReference.cache
